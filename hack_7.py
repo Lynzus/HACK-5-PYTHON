@@ -9,7 +9,15 @@ text: [] output => [0]
 """
 
 
-def fn_hack_7():
-    result = ["a","b","c","d","e"]
-    #...
-    return result
+def fn_hack_7(tx):
+    tx = list(tx)
+    if len(tx) > 0:    
+        for i in range(len(tx)):
+            if i % 2 == 0:
+                tx[i]=str(i+1)
+            else:
+                tx[i]=i+1
+    else:
+        tx.append(0)
+    return tx
+print(fn_hack_7(''))

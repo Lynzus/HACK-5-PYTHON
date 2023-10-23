@@ -8,7 +8,12 @@ text: ["a","b"] output => ["2","1"]
 """
 
 
-def fn_hack_8():
-    result = ["a","b","c","d","e"]
-    #...
-    return result
+def fn_hack_8(tx):
+    tx2 = tx.copy()
+    if len(tx) % 2 == 0:
+        for i in range (len(tx)):
+            tx[i]=str(len(tx)-i)
+    else:
+        for i in range (len(tx)):
+            tx[i]= tx2[(len(tx))-i-1]+'-'+str(len(tx)-i)
+    return tx

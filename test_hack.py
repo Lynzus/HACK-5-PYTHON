@@ -71,7 +71,7 @@ def test_hack_4(input, expected):
 @pytest.mark.parametrize(
     "input,expected",
     [
-     (fn_hack_5("fooziman"),"fo-zi-ma-"),
+     (fn_hack_5("fooziman"),"fo-zi-an"),
      (fn_hack_5("barziman"), "ba-zi-an"),
      (fn_hack_5("qu-"),"qu-"),
      (fn_hack_5("eq"),"eq"),

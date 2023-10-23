@@ -9,7 +9,13 @@ text: [] output => ["0"]
 """
 
 
-def fn_hack_6():
-    result = ["a","b","c","d","e"]
-    #...
-    return result
+def fn_hack_6(tx):
+    tx = list(tx)
+    if len(tx) > 0:    
+        for i in range(len(tx)):
+            tx[i]=str(i+1)
+            if i % 2 == 0 and i != 0:
+                tx[i-1] = '-'
+    else:
+        tx=['0']
+    return tx
